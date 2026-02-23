@@ -114,3 +114,49 @@ This package integrates multiple widely used tools, and we sincerely acknowledge
 ### Contributing
 We welcome any contribution, including but not limited to code, ideas, and tutorials. Please report errors and questions on GitHub [**Issues**](https://github.com/liubingdong/EasyMultiProfiler/issues). 
 
+
+---
+
+## 🎉 Version 2.0 - New Features
+
+### New Analysis Modules
+
+| Module | Description |
+|--------|-------------|
+| **ChIP-seq** | Peak annotation, GO/KEGG enrichment, Motif analysis |
+| **Single Cell** | scRNA-seq analysis: QC, clustering, markers, trajectory |
+| **CUT&Tag** | High-sensitivity epigenomics analysis |
+| **CUT&RUN** | Ultra-low background analysis |
+| **ATAC-seq** | Chromatin accessibility analysis |
+
+### New Functions
+
+```r
+# ChIP-seq analysis
+annotate_peaks(peak_file, genome = "hg38")
+chipseq_go_enrichment(peak_file)
+chipseq_kegg_enrichment(peak_file)
+chipseq_motif_analysis(peak_file)
+
+# Single cell analysis
+load_scRNA("data/")
+sc_qc(sce)
+sc_reduce_dim(sce, method = "UMAP")
+sc_cluster(sce, method = "Louvain")
+sc_find_markers(sce, clusters)
+sc_annotate(clusters, markers)
+
+# CUT&Tag/CUT&RUN
+cuttag_analysis(bam_file)
+cutrun_analysis(bam_file)
+atac_analysis(bam_file)
+
+# Complete pipelines
+chipseq_pipeline(treatment_bam, control_bam)
+sc_pipeline(file_path)
+```
+
+### Version 2.0.0 Release Date
+
+2026-02-23
+
